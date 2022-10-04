@@ -12,7 +12,9 @@
           <ListItem>
             <RendererToMain1 />
           </ListItem>
-          <ListItem> Renderer to Main (two-way) </ListItem>
+          <ListItem>
+            <RendererToMain2 />
+          </ListItem>
           <ListItem> Main to Renderer </ListItem>
         </ul>
       </div>
@@ -23,4 +25,5 @@
 <script setup>
 import ListItem from "./components/ListItem.vue";
 import RendererToMain1 from "./components/RendererToMain1.vue";
+import RendererToMain2 from "./components/RendererToMain2.vue";
 </script>

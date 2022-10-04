@@ -26,8 +26,18 @@ const setTitle = (event, title) => {
   win.setTitle(title);
 };
 
+// Renderer to Main (two-way)
+// Main responds to ping
+const pong = () => {
+  return "Pong from Main.";
+};
+
 app.whenReady().then(() => {
+  // Renderer to Main (one-way)
   ipcMain.on("set-title", setTitle);
+
+  // Renderer to Main (two-way)
+  ipcMain.handle("ping", pong);
 
   createWindow();
 
