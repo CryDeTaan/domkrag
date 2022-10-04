@@ -18,6 +18,14 @@ export default defineConfig({
           },
         },
       },
+      preload: {
+        input: "packages/preload/preload.js",
+        vite: {
+          build: {
+            outDir: "dist/electron",
+          },
+        },
+      },
     }),
   ],
   resolve: {
