@@ -2,8 +2,8 @@
   "name": "domkrag",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build",
+    "dev": "vite packages/renderer/ --config packages/renderer/vite.config.js",
+    "build": "vite build packages/renderer/ --config packages/renderer/vite.config.js --outDir ../../dist --emptyOutDir",
     "preview": "vite preview --port 4173",
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
   },
