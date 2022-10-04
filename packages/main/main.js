@@ -1,9 +1,13 @@
 const { app, BrowserWindow, session } = require("electron");
+const path = require("path");
 
 const createWindow = () => {
   const win = new BrowserWindow({
     width: 800,
     height: 600,
+    webPreferences: {
+      preload: path.join(__dirname, "preload.js"),
+    },
   });
 
   if (process.env.VITE_DEV_SERVER_URL) {
