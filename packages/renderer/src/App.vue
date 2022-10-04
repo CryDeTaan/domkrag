@@ -7,11 +7,17 @@
       </h3>
     </div>
     <div class="flex w-full flex-grow items-center justify-center">
-      <!-- Components -->
+      <div class="flex w-full flex-grow items-center justify-center">
+        <ul role="list" class="w-2/4 divide-y divide-gray-200">
+          <ListItem> Renderer to Main (one-way) </ListItem>
+          <ListItem> Renderer to Main (two-way) </ListItem>
+          <ListItem> Main to Renderer </ListItem>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
-// Imports
+import ListItem from "./components/ListItem.vue";
 </script>
