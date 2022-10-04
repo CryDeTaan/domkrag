@@ -9,7 +9,9 @@
     <div class="flex w-full flex-grow items-center justify-center">
       <div class="flex w-full flex-grow items-center justify-center">
         <ul role="list" class="w-2/4 divide-y divide-gray-200">
-          <ListItem> Renderer to Main (one-way) </ListItem>
+          <ListItem>
+            <RendererToMain1 />
+          </ListItem>
           <ListItem> Renderer to Main (two-way) </ListItem>
           <ListItem> Main to Renderer </ListItem>
         </ul>
@@ -20,4 +22,5 @@
 
 <script setup>
 import ListItem from "./components/ListItem.vue";
+import RendererToMain1 from "./components/RendererToMain1.vue";
 </script>

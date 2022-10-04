@@ -1,4 +1,4 @@
-const { app, BrowserWindow, session } = require("electron");
+const { app, BrowserWindow, session, ipcMain } = require("electron");
 const path = require("path");
 
 const createWindow = () => {
@@ -18,7 +18,17 @@ const createWindow = () => {
   }
 };
 
+// Renderer to Main (one-way)
+// Set the window title from the renderer
+const setTitle = (event, title) => {
+  const webContents = event.sender;
+  const win = BrowserWindow.fromWebContents(webContents);
+  win.setTitle(title);
+};
+
 app.whenReady().then(() => {
+  ipcMain.on("set-title", setTitle);
+
   createWindow();
 
   // Open a window if none are open (macOS)
