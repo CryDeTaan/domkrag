@@ -1,8 +1,10 @@
 const { app, BrowserWindow, session, ipcMain } = require("electron");
+const { Menu, dialog } = require("electron");
 const path = require("path");
 
+let win;
 const createWindow = () => {
-  const win = new BrowserWindow({
+  win = new BrowserWindow({
     width: 800,
     height: 600,
     webPreferences: {
@@ -16,6 +18,45 @@ const createWindow = () => {
   } else {
     win.loadFile("./dist/index.html");
   }
+};
+
+// Add a menu item
+const createMenu = () => {
+  const menu = Menu.buildFromTemplate([
+    { role: "appMenu" },
+    { role: "fileMenu" },
+    { role: "editMenu" },
+    { role: "viewMenu" },
+    { role: "windowMenu" },
+    {
+      label: "Main",
+      submenu: [
+        {
+          label: "Read Filename",
+          accelerator: "Alt+CommandOrControl+f",
+          click: selectFile,
+        },
+      ],
+    },
+  ]);
+
+  Menu.setApplicationMenu(menu);
+};
+
+// Main to Renderer
+// Send selected filename to renderer
+const selectFile = () => {
+  const selectedFilesArray = dialog.showOpenDialogSync({
+    title: "Select a file",
+    properties: ["openFile"],
+  });
+
+  if (typeof selectedFilesArray === "undefined") return;
+
+  const selectedFilePath = selectedFilesArray.pop();
+  const selectedFile = selectedFilePath.match(/([^/]+)$/g)[0];
+
+  win.webContents.send("send-filename", selectedFile);
 };
 
 // Renderer to Main (one-way)
@@ -39,7 +80,13 @@ app.whenReady().then(() => {
   // Renderer to Main (two-way)
   ipcMain.handle("ping", pong);
 
+  // Optional callback response received from Main to Renderer pattern
+  ipcMain.on("file-displayed", (_event, value) => {
+    console.log(value); // will print value to Node console
+  });
+
   createWindow();
+  createMenu();
 
   // Open a window if none are open (macOS)
   app.on("activate", () => {

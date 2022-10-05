@@ -15,7 +15,9 @@
           <ListItem>
             <RendererToMain2 />
           </ListItem>
-          <ListItem> Main to Renderer </ListItem>
+          <ListItem>
+            <MainToRenderer />
+          </ListItem>
         </ul>
       </div>
     </div>
@@ -26,4 +28,5 @@
 import ListItem from "./components/ListItem.vue";
 import RendererToMain1 from "./components/RendererToMain1.vue";
 import RendererToMain2 from "./components/RendererToMain2.vue";
+import MainToRenderer from "./components/MainToRenderer.vue";
 </script>
