@@ -1,16 +1,21 @@
-# domkrag
+# Domkrag
 
-This template should help get you started developing with Vue 3 in Vite.
+This project is a starting point to developing an Electron application with Vue 3, Vite, and Tailwind. See the
+[Electron Apps Starting Point](https://github.com/CryDeTaan/domkrag/wiki/Electron-Apps---Starting-Point) wiki page to
+see how it was set up.
 
-## Recommended IDE Setup
+Here are some [Notes on Electron](https://abstractentropy.com/notes-on-electron/).
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+## Getting Started 
 
-## Customize configuration
+### Clone Project
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+```sh
+git clone https://github.com/CryDeTaan/domkrag.git
+```
 
-## Project Setup
+
+### Project Setup
 
 ```sh
 npm install
@@ -22,10 +27,13 @@ npm install
 npm run dev
 ```
 
-### Compile and Minify for Production
+### Compile and package for Distribution
+
+For additional information, review the [Electron Forge](https://www.electronforge.io/) documentation. This command is
+just the basic start for packaging and distribution.
 
 ```sh
-npm run build
+npm run package
 ```
 
 ### Lint with [ESLint](https://eslint.org/)
@@ -33,3 +41,7 @@ npm run build
 ```sh
 npm run lint
 ```
+
+## License
+
+This is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
