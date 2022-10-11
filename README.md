@@ -4,6 +4,8 @@ This project is a starting point to developing an Electron application with Vue 
 [Electron Apps Starting Point](https://github.com/CryDeTaan/domkrag/wiki/Electron-Apps---Starting-Point) wiki page to
 see how it was set up.
 
+![image](https://user-images.githubusercontent.com/11268952/195028302-ffa11a2e-bc6b-4f36-91b2-acfb9c39123e.png)
+
 Here are some [Notes on Electron](https://abstractentropy.com/notes-on-electron/).
 
 ## Getting Started 
