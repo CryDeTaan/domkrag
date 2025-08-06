@@ -16,10 +16,10 @@
     "vue": "^3.2.38"
   },
   "devDependencies": {
-    "@electron-forge/cli": "^6.0.0-beta.67",
+    "@electron-forge/cli": "^6.4.2",
     "@electron-forge/maker-deb": "^6.0.0-beta.67",
     "@electron-forge/maker-rpm": "^6.0.0-beta.67",
-    "@electron-forge/maker-squirrel": "^6.0.0-beta.67",
+    "@electron-forge/maker-squirrel": "^6.4.2",
     "@electron-forge/maker-zip": "^6.0.0-beta.67",
     "@rushstack/eslint-patch": "^1.1.4",
     "@vitejs/plugin-vue": "^5.2.3",
